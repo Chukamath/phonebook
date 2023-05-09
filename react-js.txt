@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React into HTML</title>
+</head>
+<body>
+    <script crossorigin
+     src="https://unpkg.com/react@17/umd/react.development.js"
+     ></script>
+<script crossorigin 
+src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+></script>
+<script>
+const element=React.createElement(
+    "div", 
+    {className:"title"},
+     "Hello React world!");
+ReactDOM.render(element, document.body)
+</script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React into HTML</title>
+</head>
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script>
+const element=<div id="titleWrapper" className="title-wrapper">
+  <h1 className="title">Hello React world!</h1>
+</div>
+ReactDOM.render(element, document.getElementById("root"));
+const element = React.createElement (
+    "div",
+    {
+        className: "title-wrapper", 
+        id: "titleWrapper",
+    },
+    React.createElement(
+        "h1",
+         {
+            className: "title",
+            style: {color:"red"},
+        },
+        "Hello, React world!"
+));
+</script>
+</body>
+</html>
+
+
+
+
+index.js
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+//Component
+function Article(props){
+  return (
+    <div style={{backgroundColor:"aqua", color:"white", width: "fit-content",padding:"10px",
+  borderRadius:"5px",marginBottom:"5px"}}>
+    <h2>{props.title}</h2>
+    <p>{props.paragraph}</p>
+    <button onClick={()=>{alert(props.paragraph)}}>alert paragraph</button>
+  </div>
+  );
+}
+function Counter(){
+  const [count,setCount]=React.useState(0);
+  return (
+    <div>
+  <p>{count}</p>
+  <button onClick={()=>{setCount(count+1)}}>inc count</button>
+  <button onClick={()=>{alert(count);}}>alert count</button>
+  </div>
+  )
+}
+//const element = React.createElement("h1",null,"Hello React development server!")
+
+const element = (
+<Counter />
+);
+ReactDOM.render(
+  <Counter />,
+  document.getElementById('root')
+);
+
+
+
+
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+//Component
+function Article(props){
+  const [displayValue,setDisplayValue] = React.useState("block")
+  return (
+    <div style={{backgroundColor:"aqua", color:"white", width: "fit-content",padding:"10px",
+  borderRadius:"5px",marginBottom:"5px"}}>
+    <h2>{props.title}</h2>
+    <p style={{display:displayValue}}>{props.paragraph}</p>
+    <button onClick={()=>{
+      if (displayValue==="none"){
+        setDisplayValue("block")
+      }
+      else {setDisplayValue("none")};
+    }}>Toggle paragraph</button>
+  </div>
+  );
+}
+
+//const element = React.createElement("h1",null,"Hello React development server!")
+
+const element = <div>
+  <Article title="title1" paragraph="paragraph1"/>
+  <Article title="title2" paragraph="paragraph2" />
+  <Article title="title3" paragraph="paragraph3"/>
+</div>
+ReactDOM.render(element
+  ,
+  document.getElementById('root')
+);
+
+
+
+https://kissasian.pe/drama/want-a-taste-episode-25
