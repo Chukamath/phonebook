@@ -1,87 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="tree">
-	<ul>
-		<li>
-		  <a href="#">Охинтайж</a>
-	<ul>
-		<li>
-		  <a href="#">Баянбажраг</a>
-	<ul>
-		<li>
-		  <a href="#">Тэмдэгт</a>
-	<ul>
-		<li>
-		  <a href="#">Лувсанзайран</a>
-	<ul>
-		<li>
-		  <a href="#">Галдан</a>	
-    <ul>
-      <li>
-        <a href="#">Сахьяа</a>
-        <ul>			
-          <li>
-            <a href="#">Лувсандагва</a>
-            <ul>
-              <li>
-                <a href="#">Болд</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Найдан</a>
-            <ul>
-              <li><a href="#">Дагва</a></li>
-              <li>
-                <a href="#">Янжин</a>
-                <ul>
-                  <li>
-                    <a href="#">Авирмэд</a>
-                  </li>
-                  <li>
-                    <a href="#">Дагва</a>
-                  </li>
-                  <li>
-                    <a href="#">Жамъяан</a>
-                  </li>
-				  <li>
-                    <a href="#">Чүлтэм</a>
-                  </li>
-				
-                </ul>
-              </li>
-              <li><a href="#">Буян</a></li>
-			  <li><a href="#">Лувсандагва</a></li>
-			  <li><a href="#">Шагдар</a>
-				<ul>
-					<li>
-						<a href="#">Нэргүй</a>
-						<ul>
-							<li><a href="#">Батхишиг</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-	  </ul>
-		</li>
-		</ul>
-		</li>
-	</ul>
-		</li>
-	</ul></li></ul></li></ul>
-  </div>
+    <div id="game">
+        <div id="pile">
+            <h3>Нүх шахах тоглоом: Бундангийн 7-оор тоглоом эхэлнэ. үргэлжлүүлэх карт байхгүй бол дурын 7-г тавьж болно.</h3>
+            <div class="pile">
+                <div id="heartsColumn" class="suit-column"></div>
+                <div id="diamondsColumn" class="suit-column"></div>
+                <div id="clubsColumn" class="suit-column"></div>
+                <div id="spadesColumn" class="suit-column"></div>
+            </div>
+            
+        </div>
+        
+        <div id="playerHand">
+            <h3>Your Hand</h3>
+            <div id="playerCards"></div>
+            <button id="skipTurn">Skip Turn</button>
+        </div>
+        
+        <div id="aiHand">
+            <h3>AI Hand</h3>
+            <div id="aiCards"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
 </body>
 </html>
