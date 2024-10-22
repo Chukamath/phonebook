@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 #game {
@@ -41,6 +43,7 @@ body {
 #playerCards, #aiCards {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* Add flex-wrap to support small screens */
 }
 
 img.card {
@@ -49,4 +52,19 @@ img.card {
 
 #skipTurn {
     margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 60px;
+        height: 90px;
+    }
+
+    #game {
+        gap: 10px;
+    }
+
+    #pileRows {
+        flex-direction: column;
+    }
 }
